@@ -1,0 +1,13 @@
+server:
+    port: 8082
+    servlet:
+        context-path: /movie-catalog-service
+spring:
+    application:
+        name: movie-catalog-service
+load-balancer:
+    url: internal-ecs-elb-prd-internal-1169402563.us-east-1.elb.amazonaws.com
+ratings-data-service:
+    url: ${load-balancer.url}/ratings-data-service
+movie-info-service:
+    url: ${load-balancer.url}/movie-info-service
